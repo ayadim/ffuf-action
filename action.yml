@@ -32,7 +32,12 @@ inputs:
   filter-code:
     description: "filter status code"
     required: false
-    default: "404"    
+    default: "404"
+
+  filter-words:
+    description: "Filter by amount of words in response."
+    required: false
+    default: 0 
 
   http-Method:
     description: "Http verbe to use."
@@ -54,5 +59,5 @@ runs:
       shell: bash
 
     - run: |
-        /home/runner/go/bin/ffuf -w=${{ inputs.wordlist }} -u=${{ inputs.ffuf-url }} -t=${{ inputs.Threads }} -X=${{ inputs.http-Method }} -mc=${{ inputs.match-code }} -fc=${{ inputs.filter-code }} -recursion -recursion-depth=${{ inputs.depth }} -o=${{ inputs.output }}      
+        /home/runner/go/bin/ffuf -w=${{ inputs.wordlist }} -u=${{ inputs.ffuf-url }} -t=${{ inputs.Threads }} -X=${{ inputs.http-Method }} -mc=${{ inputs.match-code }} -fc=${{ inputs.filter-code }}  -fw=${{ inputs.filter-words }} -recursion -recursion-depth=${{ inputs.depth }} -o=${{ inputs.output }}      
       shell: bash

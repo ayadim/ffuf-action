@@ -9,4 +9,3 @@ Available Inputs
 | `wordlist`        | Path to the wordlist file.                          | true     |
 | `output`          | Path to output file.                                | true     |
 
-add date

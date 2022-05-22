@@ -5,11 +5,8 @@ Available Inputs
 
 | Key               | Description                                         | Required |
 | ----------------- | --------------------------------------------------- | -------- |
-| `ffuf-url`        | URL created for ffuf.                               | true     |
+| `config`          | Path to ffuf configuration file.                    | true     |
 | `wordlist`        | Path to the wordlist file.                          | true     |
-| `depth`           | Maximum recursion depth.                            | false    |
-| `Threads`         | Number of concurrent threads.                       | false    |
-| `match-code`      | Match status code.                                  | false    |
-| `filter-code`     | filter status code.                                 | false    |
-| `http-Method`     | Http verbe to use.                                  | false    |
-| `output`          | File to save output result.                         | false    |
+| `output`          | Path to output file.                                | true     |
+
+

@@ -42,7 +42,7 @@ inputs:
   output:
     description: "File to save output result"
     required: false
-    default: "direct-brute-result.txt"     
+    default: "ffuf-result.txt"     
 
 
 runs:

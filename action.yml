@@ -1,0 +1,58 @@
+name: "ffuf"
+description: "This action can help you to fuzz directories using github workflow in actions section"
+branding:
+  icon: "activity"
+  color: "blue"
+
+inputs:
+
+  ffuf-url:
+    description: "URL created for ffuf."
+    required: true
+
+  wordlist:
+    description: "Path to the wordlist file."
+    required: true      
+
+  depth:
+    description: "Maximum recursion depth."
+    required: false
+    default: 1    
+
+  Threads:
+    description: "Number of concurrent threads."
+    required: false
+    default: 40
+
+  match-code:
+    description: "Match status code"
+    required: false
+    default: "200,204,301,302,307,401,403,405,500"    
+
+  filter-code:
+    description: "filter status code"
+    required: false
+    default: "404"    
+
+  http-Method:
+    description: "Http verbe to use."
+    required: false
+    default: GET    
+
+  output:
+    description: "File to save output result"
+    required: false
+    default: "direct-brute-result.txt"     
+
+
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        [ ! -x /home/runner/go/bin/ffuf ] && go install github.com/ffuf/ffuf@latest
+        echo "/home/runner/go/bin/" >> $GITHUB_PATH
+      shell: bash
+
+    - run: |
+        /home/runner/go/bin/ffuf -w=${{ inputs.wordlist }} -u=${{ inputs.ffuf-url }} -t=${{ inputs.Threads }} -X=${{ inputs.http-Method }} -mc=${{ inputs.match-code }} -fc=${{ inputs.filter-code }} -recursion -recursion-depth=${{ inputs.depth }} -o=${{ inputs.output }}      
+      shell: bash

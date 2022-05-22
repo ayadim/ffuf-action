@@ -1,5 +1,5 @@
-name: "ffuf"
-description: "This action can help you to fuzz directories using github workflow in actions section"
+name: "ffuf-action"
+description: "This action can help you to fuzz directories using github actions."
 branding:
   icon: "activity"
   color: "blue"

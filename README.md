@@ -10,6 +10,3 @@ Available Inputs
 | `output`          | Path to output file.                                | true     |
 
 
-
-
-adding number

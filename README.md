@@ -9,3 +9,7 @@ Available Inputs
 | `wordlist`        | Path to the wordlist file.                          | true     |
 | `depth`           | Maximum recursion depth.                            | false    |
 | `Threads`         | Number of concurrent threads.                       | false    |
+| `match-code`      | Match status code.                                  | false    |
+| `filter-code`     | filter status code.                                 | false    |
+| `http-Method`     | Http verbe to use.                                  | false    |
+| `output`          | File to save output result.                         | false    |

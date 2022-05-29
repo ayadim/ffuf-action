@@ -7,6 +7,6 @@ Available Inputs
 | ----------------- | --------------------------------------------------- | -------- |
 | `config`          | Path to ffuf configuration file.                    | true     |
 | `wordlist`        | Path to the wordlist file.                          | true     |
-| `output`          | Path to output file.                                | true     |
+| `output`          | Path to output file.                                | false    |
 
 regards

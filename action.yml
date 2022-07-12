@@ -17,7 +17,7 @@ inputs:
   output:
     description: "File to save output result"
     required: false
-    default: "ffuf-result.md"     
+    default: "ffuf-result.html"     
 
 
 runs:

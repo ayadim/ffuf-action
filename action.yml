@@ -17,7 +17,7 @@ inputs:
   output:
     description: "File to save output result"
     required: false
-    default: "ffuf-result.html"
+    default: "ffuf-result.md"
 
 
 runs:
@@ -29,5 +29,5 @@ runs:
       shell: bash
 
     - run: |
-        /home/runner/go/bin/ffuf -w=${{ inputs.wordlist }} -config=${{ inputs.config }} -o=${{ inputs.output }}      
+        /home/runner/go/bin/ffuf -w=${{ inputs.wordlist }} -config=${{ inputs.config }} -o=${{ inputs.output }}
       shell: bash
